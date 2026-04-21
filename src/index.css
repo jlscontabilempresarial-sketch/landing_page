@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-primary-deep: #0C162D;
+  --color-accent-gold-dark: #A7864D;
+  --color-accent-gold-light: #E6C979;
+  --color-text-dim: #d1d1d1;
+  --color-text-secondary: #8e99ac;
+  
+  --font-sans: "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-serif: "Inter", "Helvetica Neue", Arial, sans-serif; /* Geometric Balance uses sans even for headings */
+}
+
+@layer base {
+  body {
+    @apply bg-primary-deep text-white font-sans antialiased;
+  }
+}
+
+@layer utilities {
+  .bg-geometric-accent {
+    background: radial-gradient(circle, rgba(167, 134, 77, 0.1) 0%, transparent 70%);
+  }
+}
