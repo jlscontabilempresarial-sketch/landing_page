@@ -99,7 +99,7 @@ const SectionTitle = ({ subtitle, title }: { subtitle: string; title: string }) 
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: 0.1 }}
-      className="text-3xl md:text-4xl font-bold text-white leading-[1.1] mb-5"
+      className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-[1.1] mb-5 text-balance"
     >
       {title}
     </motion.h2>
@@ -217,27 +217,28 @@ export default function App() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative min-h-[85vh] flex items-center pt-20 overflow-hidden">
+      <section className="relative min-h-[85vh] sm:min-h-screen flex items-center pt-24 pb-12 overflow-hidden">
         {/* Abstract Background Elements */}
         <div className="absolute top-0 right-0 w-2/3 h-full bg-gradient-to-bl from-accent-gold-dark/10 to-transparent opacity-50 skew-x-12 transform translate-x-1/4" />
         <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-accent-gold-light/5 rounded-full blur-[100px]" />
 
         <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-4xl">
+          <div className="max-w-4xl mx-auto md:ml-0">
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
+              initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
+              className="text-center md:text-left"
             >
-              <div className="text-accent-gold-light text-sm font-semibold uppercase tracking-[3px] mb-4">Especialistas em Gestão Tributária</div>
-              <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-6">
+              <div className="text-accent-gold-light text-xs sm:text-sm font-semibold uppercase tracking-[3px] mb-4">Especialistas em Gestão Tributária</div>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-6 text-balance">
                 Abra sua empresa ou pague <span className="text-accent-gold-light">menos impostos.</span>
               </h1>
-              <p className="text-lg md:text-xl text-text-dim max-w-2xl mb-10 leading-relaxed">
+              <p className="text-sm md:text-xl text-text-dim max-w-2xl mb-10 leading-relaxed text-pretty">
                 Consultoria contábil inteligente para empresários, prestadores de serviço e profissionais PJ que buscam segurança estratégica.
               </p>
-            <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
-                <GoldButton className="text-lg px-8 sm:px-10 w-full sm:w-auto">
+            <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 sm:gap-6">
+                <GoldButton className="text-lg px-8 sm:px-10 w-full sm:w-auto shadow-2xl">
                   Falar no WhatsApp
                 </GoldButton>
                 <div className="text-[13px] text-accent-gold-dark font-medium">Resposta em menos de 5 min</div>
@@ -248,14 +249,14 @@ export default function App() {
       </section>
 
       {/* Quem Somos */}
-      <section id="sobre" className="min-h-screen flex items-center py-20 bg-white/[0.02]">
-        <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <section id="sobre" className="min-h-screen flex items-center py-12 md:py-20 bg-white/[0.02]">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="grid lg:grid-cols-2 gap-10 md:gap-16 lg:gap-20 items-center">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="relative w-full max-w-2xl mx-auto lg:ml-0"
+              className="relative w-full max-w-2xl mx-auto lg:ml-0 order-2 lg:order-1"
             >
               <div className="aspect-[4/3] bg-white/5 rounded-sm overflow-hidden relative group">
                 <img 
@@ -266,22 +267,22 @@ export default function App() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary-deep/60 via-transparent to-transparent" />
               </div>
-              <div className="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 bg-accent-gold-dark p-4 md:p-6 rounded-sm shadow-2xl hidden md:block">
+              <div className="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 bg-accent-gold-dark p-4 md:p-6 rounded-sm shadow-2xl hidden sm:block">
                 <p className="text-primary-deep font-serif text-2xl md:text-3xl font-bold mb-0.5">10+</p>
                 <p className="text-primary-deep uppercase tracking-widest text-[8px] md:text-[10px] font-bold">Anos de Experiência</p>
               </div>
             </motion.div>
 
-            <div>
+            <div className="order-1 lg:order-2">
               <SectionTitle subtitle="Excelência e Confiança" title="Consultoria Contábil Estratégica" />
               
               {/* Tab Navigation */}
-              <div className="flex gap-8 border-b border-white/10 mb-6">
+              <div className="flex gap-4 md:gap-8 border-b border-white/10 mb-6 overflow-x-auto no-scrollbar whitespace-nowrap">
                 {aboutTabs.map((tab, i) => (
                   <button
                     key={i}
                     onClick={() => setActiveAboutTab(i)}
-                    className={`pb-3 text-sm font-bold uppercase tracking-widest transition-all relative ${activeAboutTab === i ? 'text-accent-gold-light' : 'text-white/40 hover:text-white/60'}`}
+                    className={`pb-3 text-xs md:text-sm font-bold uppercase tracking-widest transition-all relative flex-shrink-0 ${activeAboutTab === i ? 'text-accent-gold-light' : 'text-white/40 hover:text-white/60'}`}
                   >
                     {tab.title}
                     {activeAboutTab === i && (
@@ -328,13 +329,13 @@ export default function App() {
       </section>
 
       {/* Serviços Prestados */}
-      <section id="servicos" className="min-h-screen flex items-center py-8 relative overflow-hidden">
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="text-center md:text-left mb-2">
+      <section id="servicos" className="min-h-screen flex items-center py-12 md:py-20 relative overflow-hidden">
+        <div className="container mx-auto px-4 md:px-6 relative z-10">
+          <div className="text-center md:text-left mb-10 md:mb-16">
             <SectionTitle subtitle="Nossas Soluções" title="Dedicados ao Sucesso" />
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             <ServiceCard 
               icon={<UserPlus2 size={32} />}
               title="Abertura de Empresa"
@@ -374,17 +375,17 @@ export default function App() {
       </section>
 
       {/* Feedback Section */}
-      <section id="feedback" className="h-screen flex items-center bg-primary-deep relative overflow-hidden">
-        <div className="container mx-auto px-6 py-4">
-          <div className="text-center max-w-3xl mx-auto mb-6">
+      <section id="feedback" className="min-h-screen lg:h-screen flex items-center bg-primary-deep relative overflow-hidden py-16 lg:py-0">
+        <div className="container mx-auto px-4 md:px-6 py-4">
+          <div className="text-center max-w-3xl mx-auto mb-10">
             <SectionTitle subtitle="Feedback" title="A Voz de Nossos Parceiros" />
           </div>
 
           <div className="max-w-5xl mx-auto">
-            <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 lg:gap-10 items-center">
+            <div className="flex flex-col lg:grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
               {/* Left Column: Testimonial Text */}
-              <div className="w-full">
-                <div className="relative min-h-[280px] md:min-h-[320px] flex flex-col justify-center bg-white/[0.01] border border-white/5 p-5 md:p-8 rounded-sm shadow-inner group">
+              <div className="w-full order-2 lg:order-1">
+                <div className="relative min-h-[320px] sm:min-h-[300px] flex flex-col justify-center bg-white/[0.01] border border-white/5 p-6 md:p-10 rounded-sm shadow-inner group">
                   <Quote className="absolute top-6 right-6 w-10 h-10 text-accent-gold-dark/5 -scale-x-100 transition-opacity group-hover:opacity-10" />
                   
                   <div className="relative z-10">
@@ -446,9 +447,9 @@ export default function App() {
               </div>
 
               {/* Right Column: Static Video */}
-              <div className="w-full">
+              <div className="w-full order-1 lg:order-2">
                 <div 
-                  className="rounded-sm overflow-hidden bg-black border border-white/5 relative shadow-2xl aspect-video group"
+                  className="rounded-sm overflow-hidden bg-black border border-white/5 relative shadow-2xl aspect-video group mb-6 lg:mb-0"
                 >
                   <iframe
                     className="absolute inset-0 w-full h-full"
@@ -480,17 +481,17 @@ export default function App() {
       </section>
 
       {/* Contatos */}
-      <section id="contatos" className="h-[70vh] flex items-center py-10 relative overflow-hidden">
+      <section id="contatos" className="min-h-[70vh] flex items-center py-16 md:py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-accent-gold-dark/5" />
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <SectionTitle subtitle="Pronto para o Próximo Nível?" title="Leve Sua Gestão Contábil Para o Padrão de Excelência" />
-            <p className="text-base text-white/70 mb-6">
+            <p className="text-sm md:text-base text-white/70 mb-10 max-w-xl mx-auto text-pretty">
               Clique no botão abaixo e fale agora mesmo com um de nossos consultores especialistas.
             </p>
-            <GoldButton className="text-lg px-10 py-4 border-b-4 border-accent-gold-dark/50">
-              <MessageCircle className="w-6 h-6" />
-              Falar com Consultor no WhatsApp
+            <GoldButton className="text-base md:text-lg px-8 md:px-12 py-4 md:py-6 w-full sm:w-auto shadow-2xl">
+              <MessageCircle className="w-5 h-5 md:w-6 md:h-6" />
+              Falar com Consultor Agora
             </GoldButton>
           </div>
         </div>
@@ -560,21 +561,21 @@ export default function App() {
             </div>
           </div>
 
-          <div className="pt-6 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-white/50 text-sm">
+          <div className="pt-8 md:pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-10 md:gap-4 text-center md:text-left">
+            <p className="text-white/30 text-[11px] md:text-sm order-3 md:order-1 tracking-wide">
               © 2026 JLS Contabilidade. Todos os direitos reservados.
             </p>
-            <div className="flex gap-10">
+            <div className="flex flex-col sm:flex-row flex-wrap justify-center md:justify-end gap-8 md:gap-10 order-2 w-full sm:w-auto">
               <div className="flex flex-col text-[12px] text-white">
-                <span className="text-accent-gold-light font-bold uppercase tracking-widest text-[10px] mb-0.5">E-mail</span>
-                <a href="mailto:contato@jlscontabilidade.com.br" className="opacity-80 hover:opacity-100 hover:text-accent-gold-light transition-all">contato@jlscontabilidade.com.br</a>
+                <span className="text-accent-gold-light font-bold uppercase tracking-widest text-[9px] mb-1.5 opacity-60">E-mail</span>
+                <a href="mailto:contato@jlscontabilidade.com.br" className="opacity-80 hover:opacity-100 hover:text-accent-gold-light transition-all break-all sm:break-normal">contato@jlscontabilidade.com.br</a>
               </div>
               <div className="flex flex-col text-[12px] text-white">
-                <span className="text-accent-gold-light font-bold uppercase tracking-widest text-[10px] mb-0.5">Instagram</span>
+                <span className="text-accent-gold-light font-bold uppercase tracking-widest text-[9px] mb-1.5 opacity-60">Instagram</span>
                 <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="opacity-80 hover:opacity-100 hover:text-accent-gold-light transition-all">@jlscontabilidade</a>
               </div>
               <div className="flex flex-col text-[12px] text-white">
-                <span className="text-accent-gold-light font-bold uppercase tracking-widest text-[10px] mb-0.5">WhatsApp</span>
+                <span className="text-accent-gold-light font-bold uppercase tracking-widest text-[9px] mb-1.5 opacity-60">WhatsApp</span>
                 <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="opacity-80 hover:opacity-100 hover:text-accent-gold-light transition-all">(11) 99999-0000</a>
               </div>
             </div>
@@ -590,13 +591,13 @@ function ServiceCard({ icon, title, description }: { icon: React.ReactNode; titl
   return (
     <motion.div 
       whileHover={{ scale: 1.02 }}
-      className="bg-white/[0.02] border-l-[3px] border-accent-gold-dark p-6 rounded-[4px] group transition-all"
+      className="bg-white/[0.02] border-l-[3px] border-accent-gold-dark p-6 md:p-8 rounded-[4px] group transition-all h-full"
     >
-      <div className="text-accent-gold-light mb-4">
+      <div className="text-accent-gold-light mb-4 md:mb-6">
         {React.cloneElement(icon as React.ReactElement, { size: 28 })}
       </div>
-      <h3 className="text-base md:text-lg font-bold mb-2 tracking-tight">{title}</h3>
-      <p className="text-text-secondary text-[13px] leading-relaxed line-clamp-3">{description}</p>
+      <h3 className="text-base md:text-lg font-bold mb-2 md:mb-3 tracking-tight">{title}</h3>
+      <p className="text-text-secondary text-xs md:text-[13px] leading-relaxed line-clamp-4">{description}</p>
     </motion.div>
   );
 }
