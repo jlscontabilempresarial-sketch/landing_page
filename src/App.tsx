@@ -217,7 +217,7 @@ export default function App() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative min-h-[85vh] sm:min-h-screen flex items-center pt-24 pb-12 overflow-hidden">
+      <section className="relative min-h-[85vh] lg:h-screen flex items-center pt-24 pb-12 overflow-hidden">
         {/* Abstract Background Elements */}
         <div className="absolute top-0 right-0 w-2/3 h-full bg-gradient-to-bl from-accent-gold-dark/10 to-transparent opacity-50 skew-x-12 transform translate-x-1/4" />
         <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-accent-gold-light/5 rounded-full blur-[100px]" />
@@ -249,9 +249,9 @@ export default function App() {
       </section>
 
       {/* Quem Somos */}
-      <section id="sobre" className="min-h-screen flex items-center py-12 md:py-20 bg-white/[0.02]">
+      <section id="sobre" className="min-h-screen lg:h-screen flex items-center py-12 lg:py-0 bg-white/[0.02] overflow-hidden">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid lg:grid-cols-2 gap-10 md:gap-16 lg:gap-20 items-center">
+          <div className="grid lg:grid-cols-2 gap-10 md:gap-16 lg:gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -329,13 +329,13 @@ export default function App() {
       </section>
 
       {/* Serviços Prestados */}
-      <section id="servicos" className="min-h-screen flex items-center py-12 md:py-20 relative overflow-hidden">
+      <section id="servicos" className="min-h-screen lg:h-screen flex items-center py-12 lg:py-0 relative overflow-hidden">
         <div className="container mx-auto px-4 md:px-6 relative z-10">
-          <div className="text-center md:text-left mb-10 md:mb-16">
+          <div className="text-center md:text-left mb-10 lg:mb-8">
             <SectionTitle subtitle="Nossas Soluções" title="Dedicados ao Sucesso" />
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-5">
             <ServiceCard 
               icon={<UserPlus2 size={32} />}
               title="Abertura de Empresa"
@@ -481,7 +481,7 @@ export default function App() {
       </section>
 
       {/* Contatos */}
-      <section id="contatos" className="min-h-[70vh] flex items-center py-16 md:py-24 relative overflow-hidden">
+      <section id="contatos" className="min-h-[70vh] lg:h-screen flex items-center py-16 lg:py-0 relative overflow-hidden">
         <div className="absolute inset-0 bg-accent-gold-dark/5" />
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
