@@ -1,9 +1,12 @@
 import React from "react";
 import { MessageCircle, Instagram } from "lucide-react";
-
-const WHATSAPP_LINK = "https://wa.me/5527997979219?text=Ol%C3%A1%2C%20tudo%20bem%3F%20Estive%20no%20site%20de%20voc%C3%AAs%20e%20achei%20a%20proposta%20interessante.%20Gostaria%20de%20entender%20melhor%20como%20funcionam%20os%20servi%C3%A7os%20e%20como%20voc%C3%AAs%20podem%20me%20ajudar";
+import { useLocation } from "react-router-dom";
+import { getWhatsAppLink } from "../../lib/whatsapp";
 
 export default function Footer() {
+  const location = useLocation();
+  const currentWhatsAppLink = getWhatsAppLink(location.pathname);
+
   return (
     <footer className="bg-black/40 border-t border-white/5 pt-8 pb-4 relative overflow-hidden">
       <div className="container mx-auto px-6 relative z-10">
@@ -43,7 +46,7 @@ export default function Footer() {
           <div>
             <h4 className="text-accent-gold-light uppercase tracking-widest text-xs font-bold mb-6">Fale Conosco</h4>
             <a 
-              href={WHATSAPP_LINK}
+              href={currentWhatsAppLink}
               target="_blank" 
               rel="noopener noreferrer"
               className="flex items-center gap-3 text-white/70 hover:text-white transition-colors"
@@ -71,7 +74,7 @@ export default function Footer() {
             </div>
             <div className="flex flex-col text-[12px] text-white">
               <span className="text-accent-gold-light font-bold uppercase tracking-widest text-[9px] mb-1.5 opacity-60">WhatsApp</span>
-              <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="opacity-80 hover:opacity-100 hover:text-accent-gold-light transition-all">(27) 99797-9219</a>
+              <a href={currentWhatsAppLink} target="_blank" rel="noopener noreferrer" className="opacity-80 hover:opacity-100 hover:text-accent-gold-light transition-all">(27) 99797-9219</a>
             </div>
           </div>
         </div>
