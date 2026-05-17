@@ -17,9 +17,7 @@ export const getWhatsAppLink = (path: string = "/", real: boolean = false) => {
     return baseUrl + encodeURIComponent(message);
   }
 
-  // Mapeia o path para um identificador curto
-  const pageId = path === "/" ? "home" : path.replace("/", "");
-
   // Retorna o caminho interno para a página de redirecionamento (GTM)
-  return `/obrigado-pelo-contato?origem=${pageId}`;
+  // Removido o query param para manter a URL limpa conforme solicitado pelo usuário
+  return "/obrigado-pelo-contato";
 };

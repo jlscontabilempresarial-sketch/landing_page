@@ -8,9 +8,7 @@ export default function ObrigadoContato() {
   const location = useLocation();
   const navigate = useNavigate();
   
-  // Captura o parâmetro indicando a origem e o caminho real do sessionStorage
-  const queryParams = new URLSearchParams(location.search);
-  const origem = queryParams.get("origem");
+  // Captura o caminho de origem do sessionStorage (armazenado pelo PathTracker no App.tsx)
   const fromPath = sessionStorage.getItem("lastPath") || "/";
   
   useEffect(() => {
