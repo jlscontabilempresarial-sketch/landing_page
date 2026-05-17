@@ -4,13 +4,14 @@ import { motion } from "motion/react";
 import { MessageCircle } from "lucide-react";
 import { getWhatsAppLink } from "../lib/whatsapp";
 
-export default function WhatsAppRedirect() {
+export default function ObrigadoContato() {
   const location = useLocation();
   const navigate = useNavigate();
   
-  // Captura o parâmetro 'from' da URL para saber qual mensagem enviar
+  // Captura o parâmetro indicando a origem e o caminho real do sessionStorage
   const queryParams = new URLSearchParams(location.search);
-  const fromPath = queryParams.get("from") || "/";
+  const origem = queryParams.get("origem");
+  const fromPath = sessionStorage.getItem("lastPath") || "/";
   
   useEffect(() => {
     // Pegamos o link real do WhatsApp baseado na origem
