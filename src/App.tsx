@@ -9,7 +9,7 @@ import PlanejamentoTributario from "./pages/PlanejamentoTributario";
 import EnquadramentoTributario from "./pages/EnquadramentoTributario";
 import AlteracoesSocietarias from "./pages/AlteracoesSocietarias";
 import TrocarContador from "./pages/TrocarContador";
-import ObrigadoContato from "./pages/ObrigadoContato";
+import WhatsAppRedirect from "./pages/WhatsAppRedirect";
 import DesenquadramentoMEI from "./pages/DesenquadramentoMEI";
 
 function ScrollToTop() {
@@ -22,26 +22,11 @@ function ScrollToTop() {
   return null;
 }
 
-function PathTracker() {
-  const { pathname } = useLocation();
-
-  useEffect(() => {
-    // Armazena a última página visitada que não seja a de agradecimento
-    // Isso permite que a página de agradecimento saiba de onde o usuário veio sem usar query params
-    if (pathname !== "/obrigado-pelo-contato") {
-      sessionStorage.setItem("lastPath", pathname);
-    }
-  }, [pathname]);
-
-  return null;
-}
-
 export default function App() {
   return (
     <Router>
       <div className="min-h-screen bg-primary-deep text-white selection:bg-accent-gold-dark selection:text-white flex flex-col font-sans antialiased">
         <ScrollToTop />
-        <PathTracker />
         <Navbar />
         <main className="flex-grow">
           <Routes>
@@ -52,7 +37,7 @@ export default function App() {
             <Route path="/enquadramento-tributario" element={<EnquadramentoTributario />} />
             <Route path="/alteracoes-societarias" element={<AlteracoesSocietarias />} />
             <Route path="/trocar-contador" element={<TrocarContador />} />
-            <Route path="/obrigado-pelo-contato" element={<ObrigadoContato />} />
+            <Route path="/contato-whatsapp" element={<WhatsAppRedirect />} />
             <Route path="/desenquadramento-mei" element={<DesenquadramentoMEI />} />
           </Routes>
         </main>
