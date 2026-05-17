@@ -18,5 +18,6 @@ export const getWhatsAppLink = (path: string = "/", real: boolean = false) => {
   }
 
   // Retorna o caminho interno para a página de redirecionamento (GTM)
-  return `/contato-whatsapp?from=${encodeURIComponent(path)}`;
+  // Removido o query param para manter a URL limpa conforme solicitado pelo usuário
+  return "/obrigado-pelo-contato";
 };
