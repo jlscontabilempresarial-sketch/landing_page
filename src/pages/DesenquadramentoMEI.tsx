@@ -21,7 +21,7 @@ export default function DesenquadramentoMEI() {
               <span className="text-accent-gold-light">Para ME com Segurança</span>
             </h1>
             <p className="text-xl text-text-dim mb-10 leading-relaxed">
-              Seja por faturamento, funcionários ou estratégia, garantimos sua transição para ME de forma rápida e sem multas. Análise fiscal gratuita inclusa.
+              Estourou o limite do MEI ou decidiu crescer? Seja por faturamento ou planejamento estratégico, nossa mudança de MEI para ME rápida garante um desenquadramento seguro e sem multas. Solicite sua análise fiscal gratuita agora.
             </p>
             <GoldButton>
               <MessageCircle className="w-5 h-5" />
@@ -39,8 +39,8 @@ export default function DesenquadramentoMEI() {
               <h2 className="text-3xl font-bold mb-8">Sua Transição para ME sem Burocracia</h2>
               <div className="space-y-6">
                 {[
-                  { title: "Análise Fiscal Total Gratuita", desc: "Diagnosticamos o momento ideal para o seu desenquadramento mei sem custo inicial." },
-                  { title: "Desenquadramento Ágil", desc: "Comunicação oficial do seu desenquadramento mei para me junto à Receita com rapidez." },
+                  { title: "Análise Fiscal Total Gratuita", desc: "Diagnosticamos o momento ideal para o seu desenquadramento MEI sem custo inicial." },
+                  { title: "Desenquadramento Ágil", desc: "Comunicação oficial do seu desenquadramento MEI para ME junto à Receita com rapidez." },
                   { title: "Mudança de MEI para ME Rápida", desc: "Cuidamos de toda a documentação e registro na Junta Comercial sem burocracia." },
                   { title: "Contabilidade de Crescimento", desc: "Orientação para sua nova empresa faturar mais pagando o mínimo de impostos." }
                 ].map((item, idx) => (
@@ -58,7 +58,7 @@ export default function DesenquadramentoMEI() {
               <div className="bg-primary-deep p-6 sm:p-8 rounded-sm border border-white/5 space-y-4">
                 <ShieldCheck className="text-accent-gold-light w-10 h-10" />
                 <h4 className="font-bold uppercase tracking-widest text-xs">Risco Zero</h4>
-                <p className="text-xs text-white/50">Evite multas retroativas com um desenquadramento do mei para me feito no prazo legal.</p>
+                <p className="text-xs text-white/50">Evite multas retroativas com um desenquadramento do MEI para ME feito no prazo legal.</p>
               </div>
               <div className="bg-primary-deep p-8 rounded-sm border border-white/5 space-y-4">
                 <Users className="text-accent-gold-light w-10 h-10" />
@@ -85,7 +85,7 @@ export default function DesenquadramentoMEI() {
         <div className="container mx-auto px-6">
           <h2 className="text-3xl md:text-4xl font-bold mb-8">Foque no seu lucro, nós cuidamos de tudo</h2>
           <p className="text-white/70 max-w-2xl mx-auto mb-10">
-            O desenquadramento mei para me é o combustível para seu sucesso. Resolvemos a burocracia para você escalar seu negócio.
+            Sua empresa não pode parar de crescer por causa da burocracia. Transformamos seu MEI em ME com agilidade para você focar no que realmente importa: seu lucro.
           </p>
           <GoldButton className="px-12 py-6">
             <MessageCircle className="w-5 h-5" />
